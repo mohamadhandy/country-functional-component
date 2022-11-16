@@ -1,28 +1,19 @@
+import Searchbox from './components/search-box/Searchbox';
 import './App.css';
+import { useState } from 'react';
 
 const App = () => {
-  const author = "Mohamad Handy Nugraha"
+  const [searchField, setsearchField] = useState("")
+  const [countries, setcountries] = useState([])
+
+  const onSearchChange = (e) => {
+    setsearchField(e.target.value.toLowerCase())
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React with {author}
-          </a>
-        </p>
-      </header>
+      <h1 className="app-title">Countries rolodex</h1>
+      <Searchbox placeholder="Search Country" className="country-search-box" onChangeHandler={onSearchChange} />
     </div>
   );
 }
