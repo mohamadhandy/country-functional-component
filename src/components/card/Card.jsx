@@ -1,4 +1,5 @@
 import React from 'react'
+import "./card.css"
 
 const Card = ({ name, capital, flags, demonym, population }) => {
   return (
