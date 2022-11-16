@@ -6,7 +6,7 @@ const CardList = ({ countries }) => {
   return (
     <div className="card-list">
       {countries.map(country => {
-        return <Card countries={country} />
+        return <Card key={country.name} countries={country} />
       })}
     </div>
   )

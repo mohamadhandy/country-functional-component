@@ -1,12 +1,13 @@
 import React from 'react'
 import "./card.css"
 
-const Card = ({ name, capital, flags, demonym, population }) => {
+const Card = (props) => {
+  const { name, capital, flags, demonym, population } = props.countries
   return (
     <div className="card-container">
       <h1>{name}</h1>
       <img
-        alt="Country image"
+        alt="Country"
         src={flags.png}
         width={'300px'}
         height={'200px'}
